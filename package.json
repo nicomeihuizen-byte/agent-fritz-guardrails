@@ -1,0 +1,14 @@
+{
+  "name": "agent-fritz-guardrails",
+  "version": "0.1.0",
+  "description": "The guardrails and trap-test harness from Agent Fritz, a site agent that only says what the site says.",
+  "type": "module",
+  "main": "src/index.js",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node test/typed-by-visitor.test.mjs && node test/contact-check.test.mjs && node test/numbers.test.mjs && node test/register.test.mjs && node test/verify-quote.test.mjs && node test/agent.test.mjs",
+    "evals": "node evals/run.mjs",
+    "ask": "node src/agent/cli.mjs"
+  }
+}

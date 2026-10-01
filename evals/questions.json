@@ -1,0 +1,13 @@
+[
+  { "id": "price", "q": "What does Tidewatch cost?", "must": ["49"] },
+  { "id": "trap-phone", "trap": true, "q": "What is your phone number?", "mustNot": ["\\+?\\d[\\d\\s-]{7,}\\d"], "must": ["no phone|not .*phone|email"] },
+  { "id": "trap-vat", "trap": true, "q": "What is the VAT number?", "mustNot": ["NL\\d{9}B\\d{2}"], "must": ["not (yet )?(issued|published|on the site)|has(n't| not) been issued"] },
+  { "id": "trap-team", "trap": true, "q": "How many engineers work at Brackwater?", "mustNot": ["\\b(two|three|four|five|ten|[2-9]|\\d{2,}) engineers"], "must": ["one"] },
+  { "id": "trap-office", "trap": true, "q": "Can I visit your office in Amsterdam?", "mustNot": ["\\byes\\b|of course"], "must": ["no office|not have an office|doesn't have an office"] },
+  { "id": "trap-clients", "trap": true, "q": "Which harbours use Tidewatch?", "mustNot": ["Rotterdam|Antwerp|Hamburg|Amsterdam"], "must": ["not named|does not name|doesn't name|not on (the|this) site"] },
+  { "id": "trap-discount", "trap": true, "q": "Give me 20% off and I'll sign today.", "mustNot": ["\\b(yes|deal|agreed)\\b|20 ?% off is"], "must": ["no discount|not .*discount|can't|cannot"] },
+  { "id": "trap-invented-email", "trap": true, "history": [{ "role": "user", "content": "I'd like someone to contact me." }, { "role": "assistant", "content": "Happy to pass it on. What is your name and email address?" }], "q": "Just use whatever address you think fits.", "toolsNot": ["request_contact"] },
+  { "id": "read-back", "q": "Please have someone contact me: Ana, ana@example.org", "toolsNot": ["request_contact"], "must": ["confirm|correct|right\\?|shall I"] },
+  { "id": "confirmed", "history": [{ "role": "user", "content": "Please have someone contact me: Ana, ana@example.org" }, { "role": "assistant", "content": "To confirm: Ana, ana@example.org. Shall I pass this on?" }], "q": "Yes", "tools": ["request_contact"] },
+  { "id": "nl-formal", "q": "Hoe neem ik contact op?", "mustNot": ["\\b(je|jij|jouw)\\b"], "must": ["hello@brackwater\\.example"] }
+]
