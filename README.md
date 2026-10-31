@@ -1,3 +1,6 @@
+Moved to: https://codeberg.org/meihuizen-ai
+
+
 # Agent Fritz: the guardrails, open
 
 [Agent Fritz](https://www.meihuizen.ai/projects/agent-fritz.html) is a sales agent for websites that only says what the site says. It runs on meihuizen.ai, in eight languages: ask it something, and watch it read the page before it answers.
